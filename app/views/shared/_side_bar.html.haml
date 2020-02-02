@@ -1,0 +1,19 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__username
+        モリタ
+      %ul.side-header__box__menu
+        %lu.side-header__box__edit-user
+          = link_to '#' do
+            =icon('fas', 'edit')
+        %lu.side-header__box__new-group
+          = link_to '#' do
+            =icon('fas', 'cog')
+  
+  .groups
+    = link_to '#', class:"groups-box" do
+      %p.groups-box__groupname
+        techcamp
+      %p.groups-box__new-message
+        まだメッセージがありません
