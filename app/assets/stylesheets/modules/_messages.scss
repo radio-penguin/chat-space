@@ -24,13 +24,13 @@
       justify-content: space-between;
         &__username{
           font-size: 16px;
-          color: #ffffff;
+          color: $font-color;
         }
         &__menu a{
           text-align: right;
           margin-right: 5px;
           text-decoration: none;
-          color: #ffffff;
+          color: $font-color;
         }
     }
   }
@@ -41,7 +41,7 @@
     padding: 20px;
     box-sizing: border-box;
     .groups-box{
-      color:#ffffff;
+      color: $font-color;
       margin-bottom: 40px;
       text-decoration: none;
         &__groupname{
@@ -55,7 +55,7 @@
   }
 
 .chat-main{
-  background-color: #ffffff;
+  background-color: $font-color;
   width: calc(100vw - 300px);
   }
 
@@ -151,7 +151,7 @@
         padding: 0 30px;
         margin-left: 15px;
         background-color: #38aefa;
-        color: #ffffff;
+        color: $font-color;
         cursor: pointer;
       }    
     }
