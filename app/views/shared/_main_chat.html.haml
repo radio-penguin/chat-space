@@ -2,29 +2,23 @@
   .group-info
     .group-info__left-box
       %h2.group-info__left-box__groupname
-        グループ
+        = @group.name
       %ul.group-info__left-box__member-list
         Member:
-        %lu.group-info__left-box__member-list__member
-          mori
-    = link_to '#', class: "group-info__edit-btn" do
+        - @group.users.each do |user|
+          %lu.group-info__left-box__member-list__member
+            = user.name
+    = link_to edit_group_path(@group), class: "group-info__edit-btn" do
       Edit
 
   .message-list
-    .message-list__box
-      .message-list__box__info
-        %p.message-list__box__info__talker
-          mori
-        %p.message-list__box__info__date
-          2020/01/20(wed)17:43:01
-      %p.message-list__box__text
-        テスト
+    = render @messages
 
   .message-form
-    %form.new-message
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type:"text", class:"input-box__text", placeholder:"type a message"}
-        %label{class:"input-box__image"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           =icon('fas', 'image')
-          %input{type:"file", class:"input-box__image__file"}
-      %input{type:"submit", class:"submit-btn"}
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
